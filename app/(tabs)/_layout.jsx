@@ -47,7 +47,7 @@ const TabsLayout = () => {
                             <TabIcon
                                 icon={icons.home}
                                 color={color}
-                                name="Home"
+                                name="首页"
                                 focused={focused}
                             />
                         )
@@ -62,7 +62,7 @@ const TabsLayout = () => {
                             <TabIcon
                                 icon={icons.bookmark}
                                 color={color}
-                                name="Bookmark"
+                                name="报国讲堂"
                                 focused={focused}
                             />
                         )
@@ -77,7 +77,7 @@ const TabsLayout = () => {
                             <TabIcon
                                 icon={icons.plus}
                                 color={color}
-                                name="Create"
+                                name="听经台"
                                 focused={focused}
                             />
                         )
@@ -93,7 +93,7 @@ const TabsLayout = () => {
                             <TabIcon
                                 icon={icons.profile}
                                 color={color}
-                                name="Profile"
+                                name="我的"
                                 focused={focused}
                             />
                         )
