@@ -66,19 +66,11 @@ const SignUp = () => {
                     />
 
                     <CustomButton
-                        title='Sign Up'
+                        title='注册并登陆'
                         handlePress={submit}
                         containerStyles='mt-7'
                         isLoading={isSubmitting}
                     />
-                    <View className='justify-center pt-5 flex-row gap-2'>
-                        <Text className='text-lg text-gray-100 font-pregular'>
-                            Have an account ready?
-                        </Text>
-                        <Link href='/sign-in' className='text-lg font-psemibold text-secondary'>
-                            Sign In
-                        </Link>
-                    </View>
                 </View>
             </ScrollView>
 

@@ -1,87 +1,111 @@
-import { View, Text, ScrollView, Image, Alert } from 'react-native'
-import React, { useState } from 'react'
-import { SafeAreaView } from 'react-native-safe-area-context'
-import { images } from '../../constants'
-import FormField from '../../components/FormField'
-import CustomButton from '../../components/CustomButton'
-import { Link, router } from 'expo-router'
-import { signIn,getCurrentUser } from '../../lib/appwrite'
-import { useGlobalContext } from '../../context/GlobalProvider'
+import { View, Text, ScrollView, Image, Alert, ImageBackground, TouchableOpacity } from 'react-native';
+import React, { useState } from 'react';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { images } from '../../constants';
+import FormField from '../../components/FormField';
+import CustomButton from '../../components/CustomButton';
+import {Link, router} from 'expo-router';
+import { signIn, getCurrentUser } from '../../lib/appwrite';
+import { useGlobalContext } from '../../context/GlobalProvider';
+import {StatusBar} from "expo-status-bar";
 
 const SignIn = () => {
-    const [form, setForm] = useState({
-        email: '',
-        password: '',
-    })
+    const [loginMethod, setLoginMethod] = useState('sms'); // 初始为短信快捷登录
+    const [phone, setPhone] = useState('');
+    const [password, setPassword] = useState('');
+    const [verificationCode, setVerificationCode] = useState('');
 
-    const [isSubmitting, setIsSubmitting] = useState(false)
-    const { setUser, setIsLogged } = useGlobalContext();
-
-
-    const submit = async () => {
-        if (!form.email || !form.password) {
-            Alert.alert('Error', 'Please fill in all fields')
-        }
-        setIsSubmitting(true);
+    const handleSignIn = async () => {
         try {
-            await signIn(form.email, form.password);
-
-            const result = await getCurrentUser();
-            setUser(result);
-            setIsLogged(true);
-            router.replace('/home')
+            // 登录逻辑
+            // await signIn(phone, password);
+            // const user = await getCurrentUser();
+            // 处理登录成功
+            router.push('/home');
         } catch (error) {
-            console.log(error);
-            Alert.alert('Error', error.message)
-        } finally {
-            setIsSubmitting(false)
+            Alert.alert('登录失败', error.message);
         }
-    }
+    };
 
     return (
-        <SafeAreaView className="bg-primary h-full">
-            <ScrollView>
-                <View className='w-full justify-center min-h-[83vh] px-4 my-6'>
-                    <Image source={images.logo}
-                        resizeMode='contain'
-                        className='w-[115px] h-[45px]'
-                    />
-                    <Text className='text-white text-2xl mt-10 font-psemibold'>
-                        Log in to Aora
-                    </Text>
-                    <FormField
-                        title='Email'
-                        value={form.email}
-                        handleChangeText={(e) => setForm({ ...form, email: e })}
-                        otherStyles='mt-7'
-                        keyBoardType='email-address'
-                    />
-                    <FormField
-                        title='Password'
-                        value={form.password}
-                        handleChangeText={(e) => setForm({ ...form, password: e })}
-                        otherStyles='mt-7'
-                    />
+            <ImageBackground
+                source={images.authBg}
+                className='w-full h-full justify-center items-center'
+            >
+                <SafeAreaView className='w-full flex-1 justify-center items-center p-6'>
+                    <ScrollView className='w-full'>
 
-                    <CustomButton
-                        title='Sign In'
-                        handlePress={submit}
-                        containerStyles='mt-7'
-                        isLoading={isSubmitting}
-                    />
-                    <View className='justify-center pt-5 flex-row gap-2'>
-                        <Text className='text-lg text-gray-100 font-pregular'>
-                            Don't have account?
-                        </Text>
-                        <Link href='/sign-up' className='text-lg font-psemibold text-secondary'>
-                            Sign Up
-                        </Link>
-                    </View>
-                </View>
-            </ScrollView>
+                        <View className='justify-center items-center'>
+                            <Image
+                                source={images.logo}
+                                className='w-50 h-40'
+                                resizeMode='contain'
+                            />
+                        </View>
+                        <View className='w-full h-11 flex-row justify-center mt-20 border border-amber-50 bg-white rounded-xl'>
+                            <TouchableOpacity onPress={() => setLoginMethod('sms')} className={`flex-1 justify-center items-center rounded-xl ${loginMethod === 'sms' ? 'bg-amber-700' : 'bg-white'}`}>
+                                <Text className={`text-lg font-semibold ${loginMethod === 'sms' ? 'text-white' : 'text-gray-500'}`}>短信快捷登录</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={() => setLoginMethod('password')} className={`flex-1 justify-center items-center rounded-xl ${loginMethod === 'password' ? 'bg-amber-700' : 'bg-white'}`}>
+                                <Text className={`text-lg font-semibold ${loginMethod === 'password' ? 'text-white' : 'text-gray-500'}`}>密码登录</Text>
+                            </TouchableOpacity>
+                        </View>
+                        {loginMethod === 'sms' ? (
+                            <View className='w-full mt-2'>
+                                <FormField
+                                    placeholder='+86 请输入手机号'
+                                    value={phone}
+                                    onChangeText={setPhone}
+                                    keyboardType='phone-pad'
+                                />
+                                <View className='w-full flex-row items-center justify-center'>
+                                    <FormField
+                                        placeholder='请输入验证码'
+                                        value={verificationCode}
+                                        onChangeText={setVerificationCode}
+                                        keyboardType='number-pad'
+                                        otherStyles='flex-1'
+                                    />
+                                    <CustomButton
+                                        title="获取验证码"
+                                        handlePress={() => Alert.alert('验证码', '验证码已发送')}
+                                        containerStyles="bg-yellow-500 h-11 rounded-xl px-2"
+                                        textStyles="text-white"
+                                    />
+                                </View>
+                            </View>
+                        ) : (
+                            <View className='w-full mt-2'>
+                                <FormField
+                                    placeholder='请输入手机号'
+                                    value={phone}
+                                    onChangeText={setPhone}
+                                    keyboardType='phone-pad'
+                                />
+                                <FormField
+                                    placeholder='请输入密码'
+                                    value={password}
+                                    onChangeText={setPassword}
+                                    secureTextEntry
+                                />
 
-        </SafeAreaView>
-    )
-}
+                            </View>
+                        )}
+                        <CustomButton
+                            title="登录"
+                            handlePress={handleSignIn}
+                            containerStyles="mt-2 bg-yellow-500"
+                            textStyles="text-white"
+                        />
+                        <View className='w-full flex-row items-start mt-2'>
+                            <Link href='/sign-up' className='text-base text-yellow-800 underline'>
+                                点击注册账号
+                            </Link>
+                        </View>
+                    </ScrollView>
+                </SafeAreaView>
+            </ImageBackground>
+    );
+};
 
-export default SignIn
+export default SignIn;

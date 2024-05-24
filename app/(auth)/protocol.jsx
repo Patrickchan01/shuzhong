@@ -4,7 +4,7 @@ import {Link, router} from "expo-router";
 
 const Protocol = () => {
     const handleAgree = () => {
-        router.push('sign-in')
+        router.replace('sign-in')
     };
 
     const handleDisagree = () => {

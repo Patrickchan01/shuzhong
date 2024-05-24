@@ -17,22 +17,16 @@ const Profile = () => {
   const { data: userPosts, refetch } = useAppWrite(() => getUserPosts(user.$id));
 
   const logout = async () => {
-    await signOut();
-    setUser(null);
-    setIsLogged(false);
+    // await signOut();
+    // setUser(null);
+    // setIsLogged(false);
     router.replace('/sign-in')
   }
 
-  const onRresh = async () => {
-    setRefreshing(true);
-    await refetch();
-    setRefreshing(false);
-  }
   return (
     <SafeAreaView className='bg-primary h-full'>
       <FlatList
         data={userPosts}
-        // data={[]}
         keyExtractor={(item) => item.$id}
         renderItem={({ item }) => (
           <VideoCard
