@@ -5,9 +5,6 @@ import { images } from '../../constants';
 import FormField from '../../components/FormField';
 import CustomButton from '../../components/CustomButton';
 import {Link, router} from 'expo-router';
-import { signIn, getCurrentUser } from '../../lib/appwrite';
-import { useGlobalContext } from '../../context/GlobalProvider';
-import {StatusBar} from "expo-status-bar";
 
 const SignIn = () => {
     const [loginMethod, setLoginMethod] = useState('sms'); // 初始为短信快捷登录
@@ -69,7 +66,7 @@ const SignIn = () => {
                                     <CustomButton
                                         title="获取验证码"
                                         handlePress={() => Alert.alert('验证码', '验证码已发送')}
-                                        containerStyles="bg-yellow-500 h-11 rounded-xl px-2"
+                                        containerStyles="w-35 bg-yellow-500 h-11 rounded-xl px-2 ml-1"
                                         textStyles="text-white"
                                     />
                                 </View>
@@ -82,12 +79,21 @@ const SignIn = () => {
                                     onChangeText={setPhone}
                                     keyboardType='phone-pad'
                                 />
-                                <FormField
-                                    placeholder='请输入密码'
-                                    value={password}
-                                    onChangeText={setPassword}
-                                    secureTextEntry
-                                />
+                                <View className='w-full flex-row items-center justify-center'>
+                                    <FormField
+                                        placeholder='请输入6-20位密码'
+                                        value={password}
+                                        onChangeText={setPassword}
+                                        keyboardType='number-pad'
+                                        otherStyles='flex-1'
+                                    />
+                                    <CustomButton
+                                        title="忘记密码"
+                                        handlePress={() => router.push('/find-password')}
+                                        containerStyles="bg-yellow-500 h-11 rounded-xl px-2 ml-1"
+                                        textStyles="text-white"
+                                    />
+                                </View>
 
                             </View>
                         )}
