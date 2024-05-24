@@ -1,7 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import {Image, ImageBackground, ScrollView, Text, TouchableOpacity, View} from 'react-native'
+import {Image, ImageBackground, TouchableOpacity, View} from 'react-native'
 import { Redirect, router } from 'expo-router';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import { images } from '../constants';
 import { useGlobalContext } from '../context/GlobalProvider';
 
@@ -18,7 +17,7 @@ export default function Index() {
             className="h-full w-full justify-end items-center"
         resizeMode='cover'>
           <View className="justify-center items-center mt-40">
-            <TouchableOpacity onPress={() => router.push('/sign-in')}
+            <TouchableOpacity onPress={() => router.push('/protocol')}
             className='mt-40'>
               <Image
                   source={images.entry}
