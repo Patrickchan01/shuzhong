@@ -1,7 +1,7 @@
 import { View, Text, ScrollView, Image, Alert, ImageBackground, TouchableOpacity } from 'react-native';
 import React, { useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { images } from '../../constants';
+import {icons, images} from '../../constants';
 import FormField from '../../components/FormField';
 import CustomButton from '../../components/CustomButton';
 import {Link, router} from 'expo-router';
@@ -11,8 +11,13 @@ const SignIn = () => {
     const [phone, setPhone] = useState('');
     const [password, setPassword] = useState('');
     const [verificationCode, setVerificationCode] = useState('');
+    const [isChecked, setIsChecked] = useState(false);
 
     const handleSignIn = async () => {
+        if (!isChecked) {
+            Alert.alert('提示', '请阅读并同意用户协议和隐私协议');
+            return;
+        }
         try {
             // 登录逻辑
             // await signIn(phone, password);
@@ -107,6 +112,32 @@ const SignIn = () => {
                             <Link href='/sign-up' className='text-base text-yellow-800 underline'>
                                 点击注册账号
                             </Link>
+                        </View>
+                        <View className='flex-row justify-center items-center mt-4'>
+                            <TouchableOpacity onPress={() => setIsChecked(!isChecked)} className="relative">
+                                <Image
+                                    source={icons.checkBox}
+                                    className='w-5 h-5 mr-2'
+                                    resizeMode='contain'
+                                />
+                                {isChecked && (
+                                    <Image
+                                        source={icons.check}
+                                        className='w-7 h-7 mr-2 absolute top-[-7px] right-[-5px]'
+                                        resizeMode='contain'
+                                    />
+                                )}
+                            </TouchableOpacity>
+                            <Text className='text-button'>
+                                阅读并同意
+                                <Link href={'/home'} className='underline'>
+                                《用户协议》
+                                </Link>
+                                和
+                                <Link href={'/home'} className='underline'>
+                                《隐私协议》
+                            </Link>
+                            </Text>
                         </View>
                     </ScrollView>
                 </SafeAreaView>

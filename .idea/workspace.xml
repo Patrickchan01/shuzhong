@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="607a0ce7-b54e-4345-9032-e12338ca5d33" name="Changes" comment="add find password page">
-      <change beforePath="$PROJECT_DIR$/app/(auth)/_layout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(auth)/_layout.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(auth)/find-password.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(auth)/find-password.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+    <list default="true" id="607a0ce7-b54e-4345-9032-e12338ca5d33" name="Changes" comment="modify css">
+      <change afterPath="$PROJECT_DIR$/components/BottomPopUp.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(auth)/sign-in.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(auth)/sign-in.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(auth)/sign-up.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(auth)/sign-up.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +33,7 @@
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/patrickchan/Dev/shuzhong/assets/icons&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/patrickchan/Dev/shuzhong/assets/images&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -46,8 +47,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/assets/icons" />
       <recent name="$PROJECT_DIR$/assets/images" />
+      <recent name="$PROJECT_DIR$/assets/icons" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets/images" />
@@ -71,7 +72,7 @@
       <updated>1716404197199</updated>
       <workItem from="1716404198246" duration="2290000" />
       <workItem from="1716461048884" duration="5705000" />
-      <workItem from="1716493274245" duration="21790000" />
+      <workItem from="1716493274245" duration="28748000" />
     </task>
     <task id="LOCAL-00001" summary="complete entry page">
       <option name="closed" value="true" />
@@ -113,7 +114,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716584251128</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="modify css">
+      <option name="closed" value="true" />
+      <created>1716619126928</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1716619126928</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,6 +134,7 @@
     <MESSAGE value="part of sign in page" />
     <MESSAGE value="part of sign in/ sign up page" />
     <MESSAGE value="add find password page" />
-    <option name="LAST_COMMIT_MESSAGE" value="add find password page" />
+    <MESSAGE value="modify css" />
+    <option name="LAST_COMMIT_MESSAGE" value="modify css" />
   </component>
 </project>
