@@ -1,4 +1,4 @@
-import { View, Text, FlatList, Image, RefreshControl } from 'react-native'
+import {View, Text, FlatList, Image, RefreshControl, ScrollView, TouchableOpacity} from 'react-native'
 import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { images } from '../../constants'
@@ -9,6 +9,8 @@ import { getAllPosts, getLatestPosts } from '../../lib/appwrite'
 import useAppWrite from '../../lib/useAppWrite'
 import VideoCard from '../../components/VideoCard'
 import { useGlobalContext } from '../../context/GlobalProvider'
+import homeIcons from "../../constants/homeIcons";
+import IconButton from "../../components/IconButton";
 
 
 const Home = () => {
@@ -23,55 +25,28 @@ const Home = () => {
   // }
   return (
     <SafeAreaView className='bg-primary h-full'>
-      {/*<FlatList*/}
-      {/*  data={posts}*/}
-      {/*  keyExtractor={(item) => item.$id}*/}
-      {/*  renderItem={({ item }) => (*/}
-      {/*    <VideoCard*/}
-      {/*      video={item}*/}
-      {/*    />*/}
-      {/*  )}*/}
-      {/*  ListHeaderComponent={() => (*/}
-      {/*    <View className='my-6 px-4 space-y-6'>*/}
-      {/*      <View className='justify-between items-start flex-row mb-6'>*/}
-      {/*        <View>*/}
-      {/*          <Text className='font-pmedium text-sm text-gray-100'>*/}
-      {/*            Welcome Back*/}
-      {/*          </Text>*/}
-      {/*          <Text className='text-2xl font-psemibold text-white'>*/}
-      {/*            {user?.username}*/}
-      {/*          </Text>*/}
-      {/*        </View>*/}
-      {/*        <View className='mt-1.5'>*/}
-      {/*          <Image*/}
-      {/*            source={images.logoSmall}*/}
-      {/*            className='w-9 h-10'*/}
-      {/*            resizeMode='contain'*/}
-      {/*          />*/}
-      {/*        </View>*/}
-      {/*      </View>*/}
-      {/*      <SearchInput />*/}
-      {/*      <View className='w-full flex-1 pt-5 pb-8'>*/}
-      {/*        <Text className='text-gray-100 text-lg font-pregular mb-3'>*/}
-      {/*          Latest Videos*/}
-      {/*        </Text>*/}
-      {/*        <Trending*/}
-      {/*          posts={latestPosts ?? []}*/}
-      {/*        />*/}
-      {/*      </View>*/}
-      {/*    </View>*/}
-      {/*  )}*/}
-      {/*  ListEmptyComponent={() => (*/}
-      {/*    <EmptyState*/}
-      {/*      title='No Videos Found'*/}
-      {/*      subtitle='Be the first one to upload the video'*/}
-      {/*    />*/}
-      {/*  )}*/}
-      {/*  refreshControl={<RefreshControl*/}
-      {/*    refreshing={refreshing}*/}
-      {/*    onRefresh={onRresh}*/}
-      {/*  />}*/}
-      {/*/>*/}
+      <ScrollView>
+        <View className='h-44 bg-button justify-center items-center m-1'>
+          <Text>wait for banner</Text>
+        </View>
+        <View className="flex-wrap flex-row justify-around my-4 mx-2">
+          <IconButton icon={homeIcons.overview} label="寺院概况" onPress={() => {}} />
+          <IconButton icon={homeIcons.treasuredTricks} label="恭请法宝" onPress={() => {}} />
+          <IconButton icon={homeIcons.volunteer} label="义工申请" onPress={() => {}} />
+          <IconButton icon={homeIcons.library} label="报国书库" onPress={() => {}} />
+          <IconButton icon={homeIcons.plan} label="法务安排" onPress={() => {}} />
+          <IconButton icon={homeIcons.qAndA} label="师傅答疑" onPress={() => {}} />
+          <IconButton icon={homeIcons.paiWeiRegister} label="牌位登记" onPress={() => {}} />
+          <IconButton icon={homeIcons.dailyLesson} label="净土日课" onPress={() => {}} />
+        </View>
+        <View className="flex-row justify-between items-center px-4 py-4 mx-2">
+          <Text className="text-lg font-bold text-button">寺院动态</Text>
+
+              <TouchableOpacity onPress={() => {}}>
+                <Text className="text-sm text-button">更多▶</Text>
+              </TouchableOpacity>
+        </View>
+      </ScrollView>
     </SafeAreaView>
   )
 }
