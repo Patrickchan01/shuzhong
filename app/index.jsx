@@ -13,7 +13,7 @@ export default function Index() {
       <View>
         <StatusBar style="light" />
         <ImageBackground
-            source={{uri:'https://lanhu.oss-cn-beijing.aliyuncs.com/17e76cdee9e1b7d43ba3132ef948ea80'}}
+            source={images.bg}
             className="h-full w-full justify-end items-center"
         resizeMode='cover'>
           <View className="justify-center items-center mt-40">

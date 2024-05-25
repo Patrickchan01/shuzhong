@@ -37,7 +37,7 @@ const Protocol = () => {
                     <CustomButton
                         title="同意并继续"
                         handlePress={handleAgree}
-                        containerStyles="bg-yellow-300 flex-1 ml-2"
+                        containerStyles="bg-button-100 flex-1 ml-2"
                         textStyles="text-white"
                     />
                 </View>

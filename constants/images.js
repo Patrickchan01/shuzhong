@@ -4,5 +4,6 @@ import empty from "../assets/images/empty.png";
 import  entry from "../assets/images/entry.png";
 import  hand from "../assets/images/hand.png";
 import  authBg from "../assets/images/authBg.png";
+import bg from "../assets/images/bg.png";
 
-export default {  cards, logo, empty,entry, hand, authBg };
+export default {  cards, logo, empty,entry, hand, authBg,bg };
