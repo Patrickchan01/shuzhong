@@ -13,6 +13,8 @@ import eye from "../assets/icons/eye.png";
 import play from "../assets/icons/play.png";
 import checkBox from "../assets/icons/checkBox.png";
 import check from "../assets/icons/check.png";
+import course from "../assets/icons/course.png";
+import listen from "../assets/icons/listen.png";
 
 export default {
   play,
@@ -30,4 +32,6 @@ export default {
   eye,
   checkBox,
   check,
+  course,
+  listen,
 };

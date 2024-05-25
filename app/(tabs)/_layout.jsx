@@ -5,15 +5,15 @@ import { icons } from '../../constants'
 
 const TabIcon = ({ icon, color, name, focused }) => {
     return (
-        <View className="flex items-center justify-center gap-2">
+        <View className="flex items-center justify-center">
             <Image
                 source={icon}
                 resizeMode="contain"
                 tintColor={color}
-                className="w-6 h-6"
+                className="w-10 h-10"
             />
             <Text
-                className={`${focused ? "font-psemibold" : "font-pregular"} text-xs`}
+                className={`${focused ? "font-psemibold" : "font-pregular"} text-xl`}
                 style={{ color: color }}
             >
                 {name}
@@ -27,14 +27,14 @@ const TabsLayout = () => {
         <>
             <Tabs
                 screenOptions={{
-                    tabBarActiveTintColor: "#FFA001",
-                    tabBarInactiveTintColor: "#CDCDE0",
+                    tabBarActiveTintColor: "#795c67",
+                    tabBarInactiveTintColor: "#898989",
                     tabBarShowLabel: false,
                     tabBarStyle: {
-                        backgroundColor: "#161622",
+                        backgroundColor: "#c2b69e",
                         borderTopWidth: 1,
-                        borderTopColor: "#232533",
-                        height: 84,
+                        borderTopColor: "#c2b69e",
+                        height: 104,
                     },
                 }}
             >
@@ -54,13 +54,13 @@ const TabsLayout = () => {
                     }}
                 />
                 <Tabs.Screen
-                    name='bookmark'
+                    name='course'
                     options={{
-                        title: 'Bookmark',
+                        title: 'Course',
                         headerShown: false,
                         tabBarIcon: ({ color, focused }) => (
                             <TabIcon
-                                icon={icons.bookmark}
+                                icon={icons.course}
                                 color={color}
                                 name="报国讲堂"
                                 focused={focused}
@@ -69,13 +69,13 @@ const TabsLayout = () => {
                     }}
                 />
                 <Tabs.Screen
-                    name='create'
+                    name='listen'
                     options={{
-                        title: 'Create',
+                        title: 'Listen',
                         headerShown: false,
                         tabBarIcon: ({ color, focused }) => (
                             <TabIcon
-                                icon={icons.plus}
+                                icon={icons.listen}
                                 color={color}
                                 name="听经台"
                                 focused={focused}
