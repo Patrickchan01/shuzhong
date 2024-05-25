@@ -1,5 +1,7 @@
 import React from 'react'
-import { Stack } from 'expo-router'
+import { Stack,router } from 'expo-router'
+import {Ionicons} from "@expo/vector-icons";
+import {TouchableOpacity} from "react-native";
 
 const AuthLayout = () => {
     return (
@@ -26,7 +28,20 @@ const AuthLayout = () => {
                 <Stack.Screen
                     name='find-password'
                     options={{
-                        headerShown: false
+                        title:'找回密码',
+                        headerShown: true,
+                        headerLeft: () => (
+                            <TouchableOpacity onPress={() => router.back()}>
+                                <Ionicons name="arrow-back" size={24} />
+                            </TouchableOpacity>
+                        ),
+                        headerStyle: {
+                            backgroundColor: '#CBC4B5',
+                        },
+                        headerTitleStyle: {
+                            fontSize:'20',
+                            color:'#562931'
+                        }
                     }}
                 />
             </Stack>

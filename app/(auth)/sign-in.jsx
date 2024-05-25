@@ -40,10 +40,10 @@ const SignIn = () => {
                             />
                         </View>
                         <View className='w-full h-11 flex-row justify-center mt-20 border border-amber-50 bg-white rounded-xl'>
-                            <TouchableOpacity onPress={() => setLoginMethod('sms')} className={`flex-1 justify-center items-center rounded-xl ${loginMethod === 'sms' ? 'bg-amber-700' : 'bg-white'}`}>
+                            <TouchableOpacity onPress={() => setLoginMethod('sms')} className={`flex-1 justify-center items-center rounded-xl ${loginMethod === 'sms' ? 'bg-button' : 'bg-white'}`}>
                                 <Text className={`text-lg font-semibold ${loginMethod === 'sms' ? 'text-white' : 'text-gray-500'}`}>短信快捷登录</Text>
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={() => setLoginMethod('password')} className={`flex-1 justify-center items-center rounded-xl ${loginMethod === 'password' ? 'bg-amber-700' : 'bg-white'}`}>
+                            <TouchableOpacity onPress={() => setLoginMethod('password')} className={`flex-1 justify-center items-center rounded-xl ${loginMethod === 'password' ? 'bg-button' : 'bg-white'}`}>
                                 <Text className={`text-lg font-semibold ${loginMethod === 'password' ? 'text-white' : 'text-gray-500'}`}>密码登录</Text>
                             </TouchableOpacity>
                         </View>
@@ -66,7 +66,7 @@ const SignIn = () => {
                                     <CustomButton
                                         title="获取验证码"
                                         handlePress={() => Alert.alert('验证码', '验证码已发送')}
-                                        containerStyles="w-35 bg-yellow-500 h-11 rounded-xl px-2 ml-1"
+                                        containerStyles="w-35 bg-button h-11 rounded-xl px-2 ml-1"
                                         textStyles="text-white"
                                     />
                                 </View>
@@ -90,7 +90,7 @@ const SignIn = () => {
                                     <CustomButton
                                         title="忘记密码"
                                         handlePress={() => router.push('/find-password')}
-                                        containerStyles="bg-yellow-500 h-11 rounded-xl px-2 ml-1"
+                                        containerStyles="bg-button h-11 rounded-xl px-2 ml-1"
                                         textStyles="text-white"
                                     />
                                 </View>
@@ -100,7 +100,7 @@ const SignIn = () => {
                         <CustomButton
                             title="登录"
                             handlePress={handleSignIn}
-                            containerStyles="mt-2 bg-yellow-500"
+                            containerStyles="mt-2 bg-button-100"
                             textStyles="text-white"
                         />
                         <View className='w-full flex-row items-start mt-2'>

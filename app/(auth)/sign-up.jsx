@@ -57,7 +57,7 @@ const SignUp = () => {
                         <CustomButton
                             title="获取验证码"
                             handlePress={() => Alert.alert('验证码', '验证码已发送')}
-                            containerStyles="w-35 bg-yellow-500 h-11 rounded-xl px-2 ml-1"
+                            containerStyles="w-35 bg-button h-11 rounded-xl px-2 ml-1"
                             textStyles="text-white"
                         />
                     </View>
@@ -68,7 +68,7 @@ const SignUp = () => {
                     <CustomButton
                         title="注册并登录"
                         handlePress={handleSignIn}
-                        containerStyles="mt-2 bg-yellow-500"
+                        containerStyles="mt-2 bg-button-100"
                         textStyles="text-white"
                     />
                 </ScrollView>
