@@ -8,6 +8,7 @@ import  plan from '../assets/homeIcons/plan.png';
 import qAndA from '../assets/homeIcons/qAndA.png';
 import treasuredTricks from '../assets/homeIcons/treasuredTricks.png';
 import volunteer from '../assets/homeIcons/volunteer.png';
+import bg from '../assets/homeIcons/bg.png';
 
 
 
@@ -22,4 +23,5 @@ export  default {
     qAndA,
     treasuredTricks,
     volunteer,
+    bg,
 }

@@ -4,6 +4,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        cardBg: {
+        DEFAULT:  "#f2ebe3",
+          100:"#d5c5b1"
+        },
         primary: "#CBC4B5",
         button: {
           DEFAULT: '#562931',
