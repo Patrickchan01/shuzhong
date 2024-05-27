@@ -1,10 +1,11 @@
 import React from 'react';
-import {View, Text, ImageBackground, TouchableOpacity, FlatList, SafeAreaView, Alert} from 'react-native';
+import {View, Text, ImageBackground, TouchableOpacity, FlatList, Alert} from 'react-native';
 import { icons, images } from '../../constants';
 import IconButton from "../../components/IconButton";
 import { router } from "expo-router";
 import NewsCard from "../../components/NewsCard";
 import homeIcons from "../../constants/homeIcons";
+import {SafeAreaView} from "react-native-safe-area-context";
 
 const Home = () => {
   const dynamicData = [
@@ -69,7 +70,7 @@ const Home = () => {
 
   return (
       <ImageBackground source={homeIcons.bg} className='h-full'>
-        <SafeAreaView>
+        <SafeAreaView edges={['top']}>
           <FlatList
               data={dynamicData}
               ListHeaderComponent={renderHeader}

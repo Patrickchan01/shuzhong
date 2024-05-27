@@ -39,7 +39,7 @@ const AuthLayout = () => {
                             backgroundColor: '#CBC4B5',
                         },
                         headerTitleStyle: {
-                            fontSize:'20',
+                            fontSize: 20,
                             color:'#562931'
                         }
                     }}
