@@ -6,9 +6,13 @@ module.exports = {
       colors: {
         cardBg: {
         DEFAULT:  "#f2ebe3",
-          100:"#d5c5b1"
+          100:"#d5c5b1",
+          200:'#a29457',
         },
-        text:'#a58f79',
+        text: {
+          DEFAULT:'#a58f79',
+          100:'#65605c',
+        },
         primary: "#CBC4B5",
         button: {
           DEFAULT: '#562931',
@@ -26,6 +30,7 @@ module.exports = {
         },
         gray: {
           100: "#CDCDE0",
+          200:'#a79f96',
         },
       },
       fontFamily: {

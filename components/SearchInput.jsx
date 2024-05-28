@@ -1,31 +1,28 @@
-import { View, TextInput, TouchableOpacity, Image, Alert } from 'react-native'
-import React, { useState } from 'react'
-import { icons } from '../constants'
-import { router, usePathname } from 'expo-router'
-
+import { View, TextInput, TouchableOpacity, Image, Alert, Text } from 'react-native';
+import React, { useState } from 'react';
+import { icons } from '../constants';
+import { router, usePathname } from 'expo-router';
 
 const SearchInput = ({ initialQuery }) => {
     const pathName = usePathname();
     const [query, setQuery] = useState(initialQuery || '');
-    return (
 
-        <View className='w-full h-16 px-4 bg-black-100 border-2 rounded-2xl
-             border-black-200 focus:border-secondary items-center flex-row space-x-4'>
-            <TextInput
-                className='flex-1 text-white font-pregular text-base mt-0.5'
-                value={query}
-                placeholder='Search for a video topic'
-                placeholderTextColor='#CDCDE0'
-                onChangeText={(e) => setQuery(e)}
-            />
+    const handleSearch = () => {
+        if (!query) {
+            return Alert.alert('Missing Query', 'Please input something to search results across database');
+        }
+        if (pathName.startsWith('/search')) {
+            router.setParams({ query });
+        } else {
+            router.push(`/search/${query}`);
+        }
+    };
+
+    return (
+        <View className='h-10 px-4 bg-cardBg border-2 rounded-full mx-4 my-1 border-button justify-center items-center flex-row'>
             <TouchableOpacity
-                onPress={() => {
-                    if (!query) {
-                        return Alert.alert('Missing Query', 'Please input something to search results accross database')
-                    }
-                    if (pathName.startsWith('/search')) router.setParams({ query })
-                     else router.push(`/search/${query}`)
-                }}
+                onPress={handleSearch}
+                className='absolute left-4'
             >
                 <Image
                     source={icons.search}
@@ -33,9 +30,21 @@ const SearchInput = ({ initialQuery }) => {
                     resizeMode='contain'
                 />
             </TouchableOpacity>
+            <TextInput
+                className='flex-1 text-white text-base font-pregular ml-8'
+                value={query}
+                placeholder='请输入搜索内容'
+                placeholderTextColor='#CDCDE0'
+                onChangeText={(e) => setQuery(e)}
+            />
+            <TouchableOpacity
+                onPress={handleSearch}
+                className='absolute right-1 bg-button px-3 rounded-full py-1.5'
+            >
+                <Text className='text-white text-xs'>搜索</Text>
+            </TouchableOpacity>
         </View>
+    );
+};
 
-    )
-}
-
-export default SearchInput
+export default SearchInput;
