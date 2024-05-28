@@ -7,6 +7,7 @@ import OverviewContent from "../../components/home/OverViewContent";
 import ContactContent from "../../components/home/ContactUs";
 import {SafeAreaView} from "react-native-safe-area-context";
 import CustomHeader from "../../components/utils/CustomHeader";
+import RouteToTemple from "../../components/home/RouteToTemple";
 
 
 const TempleOverview = () => {
@@ -37,6 +38,7 @@ const TempleOverview = () => {
                       </View>
                       {activeTab === 'overview' && <OverviewContent />}
                       {activeTab === 'contact' && <ContactContent />}
+                      {activeTab === 'route' && <RouteToTemple />}
                   </View>
               </ScrollView>
           </SafeAreaView>
