@@ -18,20 +18,7 @@ const HomeLayout = () => {
               <Stack.Screen
                   name='temple-overview'
                   options={{
-                      title:'寺院概况',
-                      headerShown: true,
-                      headerLeft: () => (
-                          <TouchableOpacity onPress={() => router.back()}>
-                                  <Text className='text-button font-bold text-xl'>◀返回</Text>
-                          </TouchableOpacity>
-                      ),
-                      headerStyle: {
-                          backgroundColor: '#CBC4B5',
-                      },
-                      headerTitleStyle: {
-                          fontSize:20,
-                          color:'#562931'
-                      }
+                      headerShown:false
                   }}
               />
               <Stack.Screen

@@ -1,27 +1,35 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
 import {images} from "../../constants";
+import ContactCard from "../utils/ContactCard";
 
 const ContactContent = () => (
-    <View className="p-4 bg-cardBg rounded-2xl mx-5 mt-4">
-        <Text className="text-lg font-semibold">联系我们</Text>
-        <View className="mt-2">
-            <Text className="text-base text-gray-700">
-                01. 内府
-            </Text>
-            <Text className="text-sm text-gray-600">
-                负责法务内务...
-            </Text>
-            <View className='items-center justify-center'>
-                <Image
-                    source={images.authBg}
-                    className='w-24 h-24 mt-2'
-                    resizeMode='cover'
-                />
-            </View>
-
-        </View>
+    <View>
+        <ContactCard
+            title='01.护法办'
+            operations='可咨询居士食宿、皈依、义工报名等相关事宜'
+            phone='028-23079003'
+            QRCode={images.authBg}
+        />
+        <ContactCard
+            title='02.功德处'
+            operations='可咨询供僧、供斋、普佛、随喜功德等相关事宜'
+            phone='17381794553'
+            QRCode={images.authBg}
+        />
+        <ContactCard
+            title='03.客堂'
+            operations='可咨询僧人挂单、男众出家等事宜'
+            phone='180814155677'
+            QRCode={images.authBg}
+        />
+        <ContactCard
+            title='04.新媒体部'
+            mail='shuzhongjingtu@yeah.net'
+        />
     </View>
+
+
 );
 
 export default ContactContent;

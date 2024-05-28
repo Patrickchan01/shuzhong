@@ -4,6 +4,7 @@ import CustomButton from "../../components/CustomButton";
 import React, {useState} from "react";
 import {router} from "expo-router";
 import {Ionicons} from "@expo/vector-icons";
+import CustomHeader from "../../components/utils/CustomHeader";
 
 
 const FindPassword = () => {
@@ -12,9 +13,13 @@ const FindPassword = () => {
   return (
       <SafeAreaView className="bg-primary h-full">
           <ScrollView>
-              <View className='p-6 w-full mt-10'>
+              <View className='p-4 w-full mt-6'>
+                  <CustomHeader
+                      title='找回密码'
+                  />
                   <FormField
                       placeholder='注册或绑定的手机号'
+                      otherStyles='mt-8'
                   />
                   <View className='w-full flex-row items-center justify-center'>
                       <FormField
