@@ -148,8 +148,8 @@ const BaoGuoCourse = () => {
                     keyExtractor={(item) => item.id}
                     ListEmptyComponent={() => (
                         <EmptyState
-                            title='No videos found for this search query'
-                            subtitle='Be the first one to upload the video'
+                            title='暂无数据！'
+                            otherStyles='bg-cardBg'
                         />)}
                 />
             </SafeAreaView>

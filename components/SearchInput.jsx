@@ -9,7 +9,7 @@ const SearchInput = ({ initialQuery,onFocus,otherStyles }) => {
 
     const handleSearch = () => {
         if (!query) {
-            return Alert.alert('Missing Query', 'Please input something to search results across database');
+            return Alert.alert('搜索失败', '请输入搜索内容');
         }
         if (pathName.startsWith('/search')) {
             router.setParams({ query });

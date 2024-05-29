@@ -12,6 +12,7 @@ module.exports = {
         text: {
           DEFAULT:'#a58f79',
           100:'#65605c',
+          200:'#76736e',
         },
         primary: "#CBC4B5",
         button: {

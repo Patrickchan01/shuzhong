@@ -75,7 +75,7 @@ const Home = () => {
               data={dynamicData}
               ListHeaderComponent={renderHeader}
               renderItem={({ item, index }) => (
-                  <NewsCard item={item} isFirst={index === 0} />
+                  <NewsCard item={item} isFirst={index === 0} containerStyles='h-24' imageStyles='w-24'/>
               )}
               keyExtractor={(item) => item.id}
           />

@@ -15,6 +15,7 @@ import checkBox from "../assets/icons/checkBox.png";
 import check from "../assets/icons/check.png";
 import course from "../assets/icons/course.png";
 import listen from "../assets/icons/listen.png";
+import likes from "../assets/icons/likes.png";
 
 export default {
   play,
@@ -34,4 +35,5 @@ export default {
   check,
   course,
   listen,
+  likes
 };
