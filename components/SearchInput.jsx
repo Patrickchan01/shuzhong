@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { icons } from '../constants';
 import { router, usePathname } from 'expo-router';
 
-const SearchInput = ({ initialQuery }) => {
+const SearchInput = ({ initialQuery,onFocus,otherStyles }) => {
     const pathName = usePathname();
     const [query, setQuery] = useState(initialQuery || '');
 
@@ -19,7 +19,8 @@ const SearchInput = ({ initialQuery }) => {
     };
 
     return (
-        <View className='h-10 px-4 bg-cardBg border-2 rounded-full mx-4 my-1 border-button justify-center items-center flex-row'>
+        <View className={`h-10 px-4 bg-cardBg border-2 rounded-full mx-4 my-1 
+        border-button justify-center items-center flex-row ${otherStyles}`}>
             <TouchableOpacity
                 onPress={handleSearch}
                 className='absolute left-4'
@@ -31,11 +32,12 @@ const SearchInput = ({ initialQuery }) => {
                 />
             </TouchableOpacity>
             <TextInput
-                className='flex-1 text-white text-base font-pregular ml-8'
+                className='flex-1 text-base font-pregular ml-8'
                 value={query}
                 placeholder='请输入搜索内容'
                 placeholderTextColor='#CDCDE0'
                 onChangeText={(e) => setQuery(e)}
+                onFocus={onFocus}
             />
             <TouchableOpacity
                 onPress={handleSearch}
