@@ -13,7 +13,7 @@ const FindPassword = () => {
   return (
       <SafeAreaView className="bg-primary h-full">
           <ScrollView>
-              <View className='p-4 w-full mt-6'>
+              <View className='p-4 mt-6'>
                   <CustomHeader
                       title='找回密码'
                   />
