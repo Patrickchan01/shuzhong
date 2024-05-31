@@ -1,5 +1,5 @@
 import {ImageBackground} from "react-native";
-import homeIcons from "../../constants/homeIcons";
+import {homeIcons} from "../../constants";
 
 
 const AskTreasure = () => {

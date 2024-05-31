@@ -1,11 +1,11 @@
 import React from 'react';
-import {View, Text, ImageBackground, TouchableOpacity, FlatList, Alert} from 'react-native';
-import { icons, images } from '../../constants';
+import {View, Text, ImageBackground, TouchableOpacity, FlatList, Alert,Image} from 'react-native';
+import {homeIcons, icons, images} from '../../constants';
 import IconButton from "../../components/IconButton";
 import { router } from "expo-router";
 import NewsCard from "../../components/NewsCard";
-import homeIcons from "../../constants/homeIcons";
 import {SafeAreaView} from "react-native-safe-area-context";
+import Swiper from 'react-native-swiper';
 
 const Home = () => {
   const dynamicData = [
@@ -13,32 +13,52 @@ const Home = () => {
       id: '1',
       date: '07/27',
       title: '六月初十 | 菩萨之心, 狱如太虚, 无不包括',
-      image: images.authBg,
+      image: images.bg,
     },
     {
       id: '2',
       date: '07/26',
       title: '五月十八 | 一切利, 哀, 赏, 称, 讯, 苦, 乐, 各有前因',
-      image: images.authBg,
+      image: images.bg,
     },
     {
       id: '3',
       date: '07/26',
       title: '五月十八 | 一切利, 哀, 赏, 称, 讯, 苦, 乐, 各有前因',
-      image: images.authBg,
+      image: images.bg,
     },
     {
       id: '4',
       date: '07/26',
       title: '五月十八 | 一切利, 哀, 赏, 称, 讯, 苦, 乐, 各有前因',
-      image: images.authBg,
+      image: images.bg,
     },
   ];
 
   const renderHeader = () => (
       <>
-        <View className='h-44 bg-button justify-center items-center m-1'>
-          <Text>wait for banner</Text>
+        <View className='h-44 justify-center items-center m-1'>
+            <View className="absolute top-0 left-0 z-10 flex-row justify-between items-center w-full p-2">
+                    <Image source={homeIcons.logo} resizeMode='contain' className='w-40 h-12'/>
+                <TouchableOpacity onPress={() => router.push('/notification')}>
+                    <Image source={homeIcons.notification} resizeMode='contain' className='h-5 w-5'/>
+                </TouchableOpacity>
+            </View>
+            <Swiper
+                autoplay={true}
+                autoplayTimeout={3}
+                dot={<View className='bg-cardBg w-2 h-2 rounded-full m-1' />}
+                activeDot={<View className='bg-button w-2 h-2 rounded-full m-1'/>}
+            >
+                {dynamicData.map(item => (
+                    <ImageBackground
+                        className="w-full h-60 flex justify-center items-center"
+                        source={item.image}
+                        resizeMode="cover"
+                    >
+                    </ImageBackground>
+                ))}
+            </Swiper>
         </View>
         <View className="flex-wrap flex-row justify-around my-2 mx-2">
           <IconButton icon={homeIcons.overview}

@@ -1,7 +1,6 @@
 import {View, Image, ImageBackground, ScrollView} from "react-native";
-import homeIcons from "../../constants/homeIcons";
 import TabButton from "../../components/utils/TabButton";
-import {images} from "../../constants";
+import {homeIcons, images} from "../../constants";
 import {useState} from "react";
 import OverviewContent from "../../components/home/OverViewContent";
 import ContactContent from "../../components/home/ContactUs";

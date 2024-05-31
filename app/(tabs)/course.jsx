@@ -1,10 +1,9 @@
 import React, {useState} from 'react';
 import {View, Text, ImageBackground, TouchableOpacity, FlatList, Alert, Image} from 'react-native';
-import { icons, images } from '../../constants';
+import { icons, images,homeIcons } from '../../constants';
 import IconButton from "../../components/IconButton";
 import { router } from "expo-router";
 import NewsCard from "../../components/NewsCard";
-import homeIcons from "../../constants/homeIcons";
 import {SafeAreaView} from "react-native-safe-area-context";
 import SearchInput from "../../components/SearchInput";
 import VideosCollectionCard from "../../components/VideosCollectionCard";
