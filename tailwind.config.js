@@ -8,6 +8,7 @@ module.exports = {
         DEFAULT:  "#f2ebe3",
           100:"#d5c5b1",
           200:'#a29457',
+          300:'#fcf2f2'
         },
         text: {
           DEFAULT:'#a58f79',

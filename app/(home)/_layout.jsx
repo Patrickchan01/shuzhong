@@ -33,6 +33,13 @@ const HomeLayout = () => {
                       headerShown: false
                   }}
               />
+              <Stack.Screen
+                  name='news-detail'
+                  options={{
+                      headerShown: false
+                  }}
+              />
+
           </Stack>
       </>
   )
