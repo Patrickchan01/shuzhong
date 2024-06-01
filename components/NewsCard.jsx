@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import {View, Text, Image, TouchableOpacity, Alert} from 'react-native';
 import {icons} from "../constants";
-import {router, usePathname} from "expo-router";
+import {router} from "expo-router";
 
 const NewsCard = ({ item, isFirst,containerStyles,imageStyles }) => {
-const handlePress = () => {
-    router.push('/news-detail')
-}
+    const handlePress = () => {
+            router.push(`/news/${item.id}`);
+    };
 return (
     <View className={`${containerStyles} flex-row items-center mx-4 bg-cardBg rounded-2xl mb-2.5`}>
         {isFirst ? (

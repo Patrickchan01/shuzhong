@@ -16,7 +16,7 @@ const BaoGuoCourse = () => {
     const data = [
         {
             id: '1',
-            updateTime: '2024-05-29 03:45:59',
+            updateTime: '2024-05-29 03:45',
             title: '《入香光室》浅析',
             photo: images.authBg,
             author: '昌臻法师',
@@ -26,7 +26,7 @@ const BaoGuoCourse = () => {
         },
         {
             id: '2',
-            updateTime: '2024-05-29 04:30:15',
+            updateTime: '2024-05-29 04:30',
             title: '《禅宗入门》导读',
             photo: images.authBg,
             author: '智岩法师',
@@ -36,7 +36,7 @@ const BaoGuoCourse = () => {
         },
         {
             id: '3',
-            updateTime: '2024-05-29 05:15:42',
+            updateTime: '2024-05-29 05:15',
             title: '《佛学通识》系列讲座',
             photo: images.authBg,
             author: '净瑛法师',

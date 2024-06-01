@@ -1,9 +1,5 @@
-import {router, Stack} from "expo-router";
+import {Stack} from "expo-router";
 import React from 'react'
-import {Text, TouchableOpacity, View} from "react-native";
-import {Ionicons} from "@expo/vector-icons";
-
-
 
 const HomeLayout = () => {
   return(
@@ -33,13 +29,6 @@ const HomeLayout = () => {
                       headerShown: false
                   }}
               />
-              <Stack.Screen
-                  name='news-detail'
-                  options={{
-                      headerShown: false
-                  }}
-              />
-
           </Stack>
       </>
   )
