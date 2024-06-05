@@ -39,7 +39,7 @@ const Home = () => {
       <>
         <View className='h-44 justify-center items-center m-1'>
             <View className="absolute top-0 left-0 z-10 flex-row justify-between items-center w-full p-2">
-                    <Image source={homeIcons.logo} resizeMode='contain' className='w-40 h-12'/>
+                    <Image source={homeIcons.logo} resizeMode='contain' className='w-36 h-12'/>
                 <TouchableOpacity onPress={() => router.push('/notification')}>
                     <Image source={homeIcons.notification} resizeMode='contain' className='h-5 w-5'/>
                 </TouchableOpacity>
@@ -52,6 +52,7 @@ const Home = () => {
             >
                 {dynamicData.map(item => (
                     <ImageBackground
+                        key={item.id}
                         className="w-full h-60 flex justify-center items-center"
                         source={item.image}
                         resizeMode="cover"
